@@ -16,7 +16,6 @@ A packer project that creates an ```AWS box```
 
 - File ec2-box.json : a JSON file that configure the various components of Packer in order to create required machine images
 
-https://www.packer.io/docs/builders/amazon.html#specifying-amazon-credentials
 
 ### How to use the repo
 
