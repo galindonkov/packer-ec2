@@ -6,8 +6,29 @@ A packer project that creates an ```AWS box```
 
 - Packer software installation : [link for packer](https://www.packer.io/intro/getting-started/install.html)
 
-### The repo is having following files
+### AWS account required with related keys
 
-### TO DO
+- Creating an AWS acccount : [link to AWS](https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/AboutAWSAccounts.html)
 
-Adding needed json file once built to create an AWS box
+- Creating and managing AWS keys : [how to](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
+
+### The repo is having following file
+
+- File ec2-box.json : a JSON file that configure the various components of Packer in order to create required machine images
+
+https://www.packer.io/docs/builders/amazon.html#specifying-amazon-credentials
+
+### How to use the repo
+
+- First of all clone the repo to your pc by : ```git clone git@github.com:galindonkov/packer-ec2-box.git```
+
+- Switch to created directory ```packer-ec2-box``` by : ```cd packer-ec2-box/```
+
+- You can either export your aws_access and aws_secret keys as environment variables or put them into the ec2-box.json file. Following link explains both variants : [set keys](https://www.packer.io/docs/builders/amazon.html#specifying-amazon-credentials)
+
+- Created ```ec2-box.json``` does not have those keys into it, so in order to use it, please set the keys as environment variables first.
+
+- Once both keys as exported, create the AWS box by : ```packer build ec2-box.json```
+
+- Please note that created by ```packer``` will be in ```us-east-1``` region, so in order to use it choose the appropriate region :  [choose an AWS region](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-region.html)
+
